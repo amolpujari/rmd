@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require chosen
  */
+
+.search{
+  padding: 10px;
+  margin:20px auto;
+  font-size: 18px;
+  width:60%;
+  display: inherit;
+}

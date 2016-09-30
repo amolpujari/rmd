@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row" style="border-bottom: 1px solid #eef;">
+        <div class="col-md-12" style="">
+            <input name="q" placeholder="Search" class="search">
+            <br>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3" style="border-right: 1px solid #eef;min-height:500px;">
+            <p class="lead">Categories</p>
+            <div class="list-group datalist" data-model="categories">
+                <!--<a href="#" class="list-group-item">Category 1</a>-->
+            </div>
+        </div>
+
+        <div class="col-md-9" style="border-right: 1px solid #eef;min-height:500px;">
+            <p class="lead">Products</p>
+            <div class="row datalist" data-model="products" fetch-data="true">
+
+                <!--<div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h5><a href="#">product.name</a></h5>
+                            <h5>SGD product.price</h5>
+                        </div>
+                    </div>
+                </div>-->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->
+

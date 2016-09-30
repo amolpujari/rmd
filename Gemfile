@@ -32,6 +32,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'figaro'
+gem 'activeadmin', github: 'activeadmin'
+gem 'faker'
+gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
+gem 'jquery-ui-rails'
+gem 'chosen-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -41,5 +48,13 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  gem 'puma'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'brakeman-min', :require => false
+  gem 'holepicker', :require => false
+  gem 'bullet'
+  gem 'ruby-prof'
+  gem 'meta_request'
 end
 
