@@ -2,7 +2,7 @@
 
 === Setup ===
 
-`config/application.yml` should have the posgres password.
+`config/application.yml` should have the postgress password.
 
 The following setup will execute the seeds, it tries to add too many records to database, it will take some time to seed, while it is adding those records, you may start the app from other console
 
