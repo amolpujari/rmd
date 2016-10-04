@@ -46,8 +46,8 @@ class Product < ActiveRecord::Base
   end
 
   def self.total
-    # Rails.cache.fetch("Product#total", expires_in: 12.hours) do
+    Rails.cache.fetch("Product#total", expires_in: 12.hours) do
       self.select('id').count
-    # end
+    end
   end
 end
