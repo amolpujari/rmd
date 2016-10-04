@@ -13,12 +13,49 @@
  *= require_tree .
  *= require_self
  *= require chosen
+ *= require font-awesome
  */
 
 .search{
   padding: 10px;
   margin:20px auto;
   font-size: 18px;
-  width:60%;
+  width:84%;
   display: inherit;
+}
+
+.search_button{
+  padding: 10px;
+  margin:20px auto;
+  font-size: 18px;
+  display: inherit;
+  border:0;
+  width:12%;
+  background: #eee;
+  border-radius: 0;
+  padding-bottom: 16px;  
+}
+
+#spinner{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.5);
+}
+
+#spinner img{
+    margin: auto;
+    display:table-cell;
+    vertical-align:middle;
+    margin-top:200px;
+    z-index: 999999;
+}
+
+div[data-resource-template]{
+  display: none;
+}
+
+a.list-group-item{
+  cursor: pointer;
 }

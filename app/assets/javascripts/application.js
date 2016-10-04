@@ -11,8 +11,43 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require chosen-jquery
+//= require underscore
 //= require_tree .
+//= require turbolinks
+
+
+(function(){
+    $(document).ajaxStart(function() {
+      showSpinner();
+
+    }).ajaxStop(function() {
+      hideSpinner();
+    });
+
+    $('[data-search]').off('click keydown keyup keypress');
+
+    
+    $('input[data-search]').keyup(_.debounce(function(){
+        rmdSearch()
+    } , 500));
+
+    $('button[data-search]').on('click', function(e){
+        rmdSearch(e);
+    });
+
+
+})();
+
+
+function hideSpinner(){
+    $("#spinner").hide().css({'display':'none'});    
+}
+
+function showSpinner(){
+    $("#spinner").width( $(document).width() ).height( $(document).height() ).show().css({'display':'table'});
+    $("#spinner img").css({'margin-top': ( $(window).scrollTop()+200 )+'px', 'postion': 'fixed' });
+}

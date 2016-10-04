@@ -8,5 +8,4 @@ class ApplicationController < ActionController::Base
   def rails_ignore_chrome_head_followup
     head :ok and return if request.head?
   end
-
 end

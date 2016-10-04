@@ -42,7 +42,7 @@ permit_params :name, :description, :price,
     end
 
     f.inputs 'Categories' do
-      f.input :category_ids, label: 'Names', as: :select, collection: f.object.categories.select_name_id, input_html: { class: "chosen-categories", multiple: true, 'data-placeholder' => 'Start typing...' }
+      f.input :category_ids, label: 'Names', as: :select, collection: f.object.categories.pluck(:name, :id), input_html: { class: "chosen-categories", multiple: true, 'data-placeholder' => 'Start typing...' }
     end
 
     f.actions         # adds the 'Submit' and 'Cancel' buttons

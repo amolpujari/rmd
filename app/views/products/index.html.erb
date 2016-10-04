@@ -3,41 +3,45 @@
 <!-- Page Content -->
 <div class="container">
 
-    <div class="row" style="border-bottom: 1px solid #eef;">
-        <div class="col-md-12" style="">
-            <input name="q" placeholder="Search" class="search">
-            <br>
+    <div class="row" style="border-bottom: 1px solid #eef; ">
+        <div class="col-md-8" style="margin-left: auto; margin-right:auto; float:none;">
+            <div class="row">
+                <input data-search="products categories" name="q" placeholder="Search <%= Product.total %> products, <%= Category.total %> ategories, example bags" class="search col-md-11">
+                <button class="search_button col-md-1" value="search"> <i data-search="products categories" class="fa fa-search" style="color:black;"> </i> </button>
+            </div>
         </div>
+        <br>
     </div>
 
     <div class="row">
 
         <div class="col-md-3" style="border-right: 1px solid #eef;min-height:500px;">
             <p class="lead">Categories</p>
-            <div class="list-group datalist" data-model="categories">
-                <!--<a href="#" class="list-group-item">Category 1</a>-->
+            <div class="list-group datalist" data-resource-holder="categories">
+            </div>
+            <div data-resource-template="categories">
+                <a onclick="rmdSearchByValue('{{name}}');" class="list-group-item">{{name}}</a>
             </div>
         </div>
 
         <div class="col-md-9" style="border-right: 1px solid #eef;min-height:500px;">
             <p class="lead">Products</p>
-            <div class="row datalist" data-model="products" fetch-data="true">
+            <div class="row datalist" data-resource-holder="products">
+            </div>
 
-                <!--<div class="col-sm-4 col-lg-4 col-md-4">
+            <div data-resource-template="products">
+                <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <div class="caption">
-                            <h5><a href="#">product.name</a></h5>
-                            <h5>SGD product.price</h5>
+                            <h5><a data-resource="products" data-id="{{id}}" target="_blank" href="/products/{{id}}">{{name}}</a></h5>
+                            <h5>SGD {{price}}</h5>
                         </div>
                     </div>
-                </div>-->
-
+                </div>
             </div>
 
         </div>
-
     </div>
-
 </div>
 <!-- /.container -->
 

@@ -37,7 +37,10 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'faker'
 gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
 gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
 gem 'chosen-rails'
+gem "font-awesome-rails"
+gem 'underscore-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

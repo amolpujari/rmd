@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>RMD</title>
+  <title>RMD | <%= @product.try(:name) %></title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -14,7 +14,6 @@
   <![endif]-->
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -31,7 +30,7 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">Search Products</a></li>
-          <li class="active pull-right"><a href="/admin">Admin</a></li>
+          <li class="active pull-right"><a href="/admin" target="_blank">Admin</a></li>
         </ul>
       </div>
     </div>
@@ -46,5 +45,11 @@
 
     <%= yield %>
   </div>
+  <div id="spinner">
+    <%= image_tag("spinner.gif") %>
+  </div>
 </body>
 </html>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  

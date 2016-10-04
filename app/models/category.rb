@@ -4,16 +4,13 @@ class Category < ActiveRecord::Base
   has_and_belongs_to_many :products
   accepts_nested_attributes_for :products
 
-  def self.select_name_id
-    select('categories.name, categories.id').pluck :name, :id
-  end
+  extend Searchable
 
   def self.q _q
-    _q = _q.to_s.strip
-    return where(nil) if _q.length < 2
-    return where(nil) if _q.length > 10
+    _q = validated_query(_q)
+    return where(nil) unless _q
 
-    where("categories.name ILIKE ?", "%#{_q}%")
+    select('categories.name, categories.id').where(id: joins(:products).where('products.name ILIKE ? OR categories.name ILIKE ?', "%#{_q}%", "%#{_q}%").limit(100).pluck(:id).uniq )
   end
 
   def self.root limit=nil
@@ -22,5 +19,11 @@ class Category < ActiveRecord::Base
     end
 
     where('categories.parent_id IS NULL').order('categories.name').limit(limit)
+  end
+
+  def self.total
+    # Rails.cache.fetch("Category#total", expires_in: 12.hours) do
+      self.select('id').count
+    # end
   end
 end
