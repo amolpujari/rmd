@@ -4,14 +4,12 @@
 
 `config/application.yml` should have the posgres password.
 
-The following setup will execute the seeds, it tries to add too many records to database, it will take time and so you can have a snacks break of coffee for sure, while it is adding those records, you may start the app from other console
+The following setup will execute the seeds, it tries to add too many records to database, it will take some time to seed, while it is adding those records, you may start the app from other console
 
 ````
 $bundle exec rake db:setup
 
 ````
-If you do not want wait for setup command to seed, then you can use db dump 'rmd.pg.back' and then start the app
-
 === How To ===
 
 from admin, products, edit any product, and modify categories
