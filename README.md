@@ -12,7 +12,7 @@ $bundle exec rake db:setup
 ````
 === How To ===
 
-from admin, products, edit any product, and modify categories
+from admin, products -> edit any product -> and one can modify categories for any product
 
 === TBD ===
 
